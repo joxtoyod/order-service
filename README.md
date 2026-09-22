@@ -13,6 +13,12 @@ curl localhost:8080/api/orders/ORD-10001
 curl localhost:8080/actuator/info     # shows build version + commit
 ```
 
+### Feature flags
+
+| Variable | Default | Description |
+|---|---|---|
+| `FEATURE_ORDER_SUMMARY` | `false` | Enables `GET /api/orders/{orderNumber}/summary` |
+
 Flyway runs migrations automatically on startup (`src/main/resources/db/migration`).
 
 ## Tests

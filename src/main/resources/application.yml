@@ -30,6 +30,9 @@ info:
     commit: ${APP_COMMIT:unknown}
     environment: ${APP_ENV:local}
 
+features:
+  order-summary: ${FEATURE_ORDER_SUMMARY:false}
+
 logging:
   level:
     root: INFO
