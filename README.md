@@ -18,8 +18,13 @@ curl localhost:8080/actuator/info     # shows build version + commit
 | Variable | Default | Description |
 |---|---|---|
 | `FEATURE_ORDER_SUMMARY` | `false` | Enables `GET /api/orders/{orderNumber}/summary` |
+| `SUMMARY_CACHE_TTL` | `10m` | Redis TTL for cached order summaries |
 
 Flyway runs migrations automatically on startup (`src/main/resources/db/migration`).
+
+## API collection
+
+Import `postman/order-service.postman_collection.json` into Postman (`baseUrl` defaults to `http://localhost:8080`).
 
 ## Tests
 

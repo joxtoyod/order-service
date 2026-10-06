@@ -1,0 +1,28 @@
+{
+  "info": {
+    "name": "order-service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080" },
+    { "key": "orderNumber", "value": "ORD-10001" }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": { "method": "GET", "url": "{{baseUrl}}/actuator/health" }
+    },
+    {
+      "name": "Build info",
+      "request": { "method": "GET", "url": "{{baseUrl}}/actuator/info" }
+    },
+    {
+      "name": "Get order",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/orders/{{orderNumber}}" }
+    },
+    {
+      "name": "Get order summary",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/orders/{{orderNumber}}/summary" }
+    }
+  ]
+}
