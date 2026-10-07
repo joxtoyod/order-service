@@ -11,6 +11,14 @@ spring:
       ddl-auto: validate
   flyway:
     enabled: ${FLYWAY_ENABLED:true}
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+  cache:
+    type: ${CACHE_TYPE:redis}
+    redis:
+      time-to-live: ${SUMMARY_CACHE_TTL:10m}
 
 management:
   endpoints:

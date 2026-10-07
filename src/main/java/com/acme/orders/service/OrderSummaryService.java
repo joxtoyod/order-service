@@ -6,6 +6,7 @@ import com.acme.orders.domain.OrderItem;
 import com.acme.orders.domain.OrderRepository;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,6 +21,7 @@ public class OrderSummaryService {
         this.orders = orders;
     }
 
+    @Cacheable(cacheNames = "order-summaries", key = "#orderNumber")
     @Transactional(readOnly = true)
     public OrderSummary summarize(String orderNumber) {
         Order order = orders.findByOrderNumber(orderNumber)
