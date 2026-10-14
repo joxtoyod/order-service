@@ -12,7 +12,7 @@ import org.springframework.test.util.ReflectionTestUtils;
 
 class OrderSummaryServiceTest {
 
-    private final OrderSummaryService service = new OrderSummaryService(null);
+    private final OrderSummaryService service = new OrderSummaryService(null, new PricingCalculator());
 
     @Test
     void summarizesTotalsAndDiscountPercent() throws Exception {
