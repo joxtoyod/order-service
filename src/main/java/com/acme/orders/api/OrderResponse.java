@@ -9,6 +9,7 @@ public record OrderResponse(
         String orderNumber,
         String customerName,
         String status,
+        String currency,
         OffsetDateTime createdAt,
         List<Item> items) {
 
@@ -20,6 +21,7 @@ public record OrderResponse(
                 order.getOrderNumber(),
                 order.getCustomer().getName(),
                 order.getStatus(),
+                order.getCurrency(),
                 order.getCreatedAt(),
                 order.getItems().stream()
                         .map(i -> new Item(i.getSku(), i.getName(), i.getQuantity(), i.getUnitPrice(), i.getDiscount()))

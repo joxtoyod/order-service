@@ -21,6 +21,9 @@ public class Order {
 
     private String status;
 
+    @Column(length = 3, nullable = false)
+    private String currency;
+
     @Column(name = "created_at")
     private OffsetDateTime createdAt;
 
@@ -35,6 +38,7 @@ public class Order {
     public String getOrderNumber() { return orderNumber; }
     public Customer getCustomer() { return customer; }
     public String getStatus() { return status; }
+    public String getCurrency() { return currency; }
     public OffsetDateTime getCreatedAt() { return createdAt; }
     public List<OrderItem> getItems() { return items; }
 }
